@@ -5,20 +5,20 @@ date: "Sunday, May 24, 2015"
 output: html_document
 ---
 #Regresja liniowa
-Model regresji mo¿emy zapisaæ nastêpuj¹co
+Model regresji mo¿emy zapisaæ nastêpuj±co
 
 $$
 Y=\beta X+ \epsilon
 $$
 
-Natomiast estymator KMNK **$\beta$**  okreœlony jest nastêpuj¹co
+Natomiast estymator KMNK **$\beta$**  okre¶lony jest nastêpuj±co
 $$
 \hat{\beta}=(X^TX)^{-1}X^TY
 $$
 
 #Dane do regresji
 U¿yjemy danych ze zbioru `cars`
-i zbudujemy model regresji `dist ~ speed`. Dodatkowo, losowo (wykorzystuj¹c funkcjê `sample` wybierzemy jedynie 20 obserwacji aby dokument by³ czytelny.
+i zbudujemy model regresji `dist ~ speed`. Dodatkowo, losowo (wykorzystuj±c funkcjê `sample` wybierzemy jedynie 20 obserwacji aby dokument by³ czytelny.
 
 ```{r dane_regresja,echo=TRUE, comment=''}
 car_sub <- cars[sample(1:50,20),]
@@ -28,7 +28,7 @@ speed <- car_sub[,1]
 distance <- car_sub[,2]
 ```
 
-Macierz $X$ wygl¹da nastêpuj¹co
+Macierz $X$ wygl±da nastêpuj±co
 ```{r echo=FALSE}
 m2l <- function(matr) {
     printmrow <- function(X) {
@@ -50,7 +50,7 @@ $$
 \mathbf{X} = `r m2l(X)`
 $$
 
-W zwi¹zku z tym $\hat{\beta}$ ma nastêpuj¹c¹ postaæ
+W zwi±zku z tym $\hat{\beta}$ ma nastêpuj±c± postaæ
 $$
 (X^TX)^{-1}X^TY=(`r m2l(X)`^T`r m2l(X)`)^{-1}`r m2l(X)`^T`r m2l(Y)`
 $$
@@ -61,14 +61,14 @@ $$
 $$
 
 #Rysujemy wykres regresji
-Wykres przedstawia zale¿noœc miêdzy `dist` a `speed` oraz oszacowan¹ krzyw¹ regresji. Nale¿y u¿yæ funkcji `plot` oraz `abline`.
+Wykres przedstawia zale¿no¶c miêdzy `dist` a `speed` oraz oszacowan± krzyw± regresji. Nale¿y u¿yæ funkcji `plot` oraz `abline`.
 ```{r echo=FALSE}
 model <- lm(distance~speed)
 
 plot(speed,distance,
-     xlab = "Prêdkoœæ",
+     xlab = "Prêdko¶æ",
      ylab = "Dystans",
-     main = "Zale¿noœæ miêdzy dystansem a prêdkoœci¹")
+     main = "Zale¿no¶æ miêdzy dystansem a prêdko¶ci±")
 abline(model, col = "red")
 ```
 
